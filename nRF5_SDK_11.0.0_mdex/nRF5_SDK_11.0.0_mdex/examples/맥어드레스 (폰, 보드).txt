@@ -1,0 +1,5 @@
+Phone mac address (BT) ==> 넥서스폰
+78:F8:82:11:F6:4B
+
+PCA10028 보드 mac address
+C0:42:2B:E3:6E:99

@@ -1,0 +1,7 @@
+Marveldex Inc.
+
+
+nRF5_SDK_11.0.0_mdex
+이 폴더가 아래 폴더의 하위에 존재하면 됨.
+This folder should be placed following folder
+c:\Keil_v5\ARM\

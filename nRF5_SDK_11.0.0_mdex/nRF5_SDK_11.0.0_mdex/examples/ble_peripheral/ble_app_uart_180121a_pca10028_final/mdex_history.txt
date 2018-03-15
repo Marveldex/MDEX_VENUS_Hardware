@@ -1,0 +1,23 @@
+REVISION HISTORY...
+
+
+171225 - ble_app_uart_171225a_i2c_spi_i2s
+	- I2C 3axis
+	- SPI loopback
+	- I2S loopback
+	O - Temperature
+
+171220 - ble_app_uart_171220b_bond_led
+	O - device_manager의 디버그 메시지 출력.
+	X - LED에서 본딩과 커넥션을 구분 ==> 불가
+	O - Timer 다변화. (5ms~3500ms)
+	C - Advertising 시간 무제한. ==> 구현 실패(기존것 참고 필요). 180초 제한 이후엔 sleep_mode_enter. 버튼1을 누르면 wakeup하여 다시 광고. 나중에 3축 센서를 달 경우 버튼의 wakeup 역할을 할 것임.
+	C - 버튼과 BLE 스택 연동 확인 ==> bsp_event_to_button_action_assign, bsp_button_event_handler ==> 버튼 동작에 대한 테이블 필요. 
+	Sleep 이후 3축 센서를 이용한 wakeup 
+	Main.c의 상당 부분을 BleMain.c 로 이동.
+
+171220 - ble_app_uart_171220_bond
+	O - adopt "device_manager"
+	O - 본딩 연결 지원.
+
+

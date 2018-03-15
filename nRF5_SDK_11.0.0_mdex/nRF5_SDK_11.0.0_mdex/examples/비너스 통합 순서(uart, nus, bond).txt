@@ -1,0 +1,49 @@
+32KB에 맞도록 다시 제작.
+
+메모리맵 AA에 맞도록 설정.
+
+UART(Debug) + HRS(Bond) + APP UART (NUS) + LED + Button
+
+[HTS]
+BLE_STACK_SUPPORT_REQD S130 BOARD_PCA10028 NRF_LOG_USES_UART=1 SOFTDEVICE_PRESENT NRF51 SWI_DISABLE0
+..\..\..\config\ble_app_hts_s130_pca10028;..\..\..\config;..\..\..\..\..\..\components\ble\ble_advertising;..\..\..\..\..\..\components\ble\ble_services\ble_bas;..\..\..\..\..\..\components\ble\ble_services\ble_dis;..\..\..\..\..\..\components\ble\ble_services\ble_hts;..\..\..\..\..\..\components\ble\common;..\..\..\..\..\..\components\ble\device_manager;..\..\..\..\..\..\components\drivers_nrf\common;..\..\..\..\..\..\components\drivers_nrf\config;..\..\..\..\..\..\components\drivers_nrf\delay;..\..\..\..\..\..\components\drivers_nrf\gpiote;..\..\..\..\..\..\components\drivers_nrf\hal;..\..\..\..\..\..\components\drivers_nrf\pstorage;..\..\..\..\..\..\components\drivers_nrf\uart;..\..\..\..\..\..\components\libraries\button;..\..\..\..\..\..\components\libraries\experimental_section_vars;..\..\..\..\..\..\components\libraries\fifo;..\..\..\..\..\..\components\libraries\fstorage;..\..\..\..\..\..\components\libraries\fstorage\config;..\..\..\..\..\..\components\libraries\sensorsim;..\..\..\..\..\..\components\libraries\timer;..\..\..\..\..\..\components\libraries\trace;..\..\..\..\..\..\components\libraries\uart;..\..\..\..\..\..\components\libraries\util;..\..\..\..\..\..\components\softdevice\common\softdevice_handler;..\..\..\..\..\..\components\softdevice\s130\headers;..\..\..\..\..\..\components\softdevice\s130\headers\nrf51;..\..\..\..\..\..\components\toolchain;..\..\..\..\..\bsp;..\..\..\..\..\..\external\segger_rtt
+
+X..\..\..\config\ble_app_hts_s130_pca10028;..\..\..\config;..\..\..\..\..\..\components\ble\ble_advertising;
+X..\..\..\..\..\..\components\ble\ble_services\ble_bas;..\..\..\..\..\..\components\ble\ble_services\ble_dis;..\..\..\..\..\..\components\ble\ble_services\ble_hts;
+X..\..\..\..\..\..\components\ble\common;..\..\..\..\..\..\components\ble\device_manager;
+O..\..\..\..\..\..\components\drivers_nrf\common;..\..\..\..\..\..\components\drivers_nrf\config;..\..\..\..\..\..\components\drivers_nrf\delay;..\..\..\..\..\..\components\drivers_nrf\gpiote;
+O..\..\..\..\..\..\components\drivers_nrf\hal;..\..\..\..\..\..\components\drivers_nrf\pstorage;..\..\..\..\..\..\components\drivers_nrf\uart;..\..\..\..\..\..\components\libraries\button;
+O..\..\..\..\..\..\components\libraries\experimental_section_vars;..\..\..\..\..\..\components\libraries\fifo;..\..\..\..\..\..\components\libraries\fstorage;
+X..\..\..\..\..\..\components\libraries\fstorage\config;..\..\..\..\..\..\components\libraries\sensorsim;
+O..\..\..\..\..\..\components\libraries\timer;..\..\..\..\..\..\components\libraries\trace;
+O..\..\..\..\..\..\components\libraries\uart;..\..\..\..\..\..\components\libraries\util;..\..\..\..\..\..\components\softdevice\common\softdevice_handler;..\..\..\..\..\..\components\softdevice\s130\headers;
+O..\..\..\..\..\..\components\softdevice\s130\headers\nrf51;..\..\..\..\..\..\components\toolchain;..\..\..\..\..\bsp;..\..\..\..\..\..\external\segger_rtt
+
+
+
+[NUS]
+BLE_STACK_SUPPORT_REQD BOARD_PCA10028 S130 NRF_LOG_USES_UART=1 NRF51 SOFTDEVICE_PRESENT SWI_DISABLE0
+..\..\..\config\ble_app_uart_s130_pca10028;..\..\..\config;..\..\..\..\..\..\components\ble\ble_advertising;..\..\..\..\..\..\components\ble\ble_services\ble_nus;..\..\..\..\..\..\components\ble\common;..\..\..\..\..\..\components\drivers_nrf\common;..\..\..\..\..\..\components\drivers_nrf\config;..\..\..\..\..\..\components\drivers_nrf\delay;..\..\..\..\..\..\components\drivers_nrf\gpiote;..\..\..\..\..\..\components\drivers_nrf\hal;..\..\..\..\..\..\components\drivers_nrf\pstorage;..\..\..\..\..\..\components\drivers_nrf\uart;..\..\..\..\..\..\components\libraries\button;..\..\..\..\..\..\components\libraries\experimental_section_vars;..\..\..\..\..\..\components\libraries\fifo;..\..\..\..\..\..\components\libraries\fstorage;..\..\..\..\..\..\components\libraries\fstorage\config;..\..\..\..\..\..\components\libraries\timer;..\..\..\..\..\..\components\libraries\uart;..\..\..\..\..\..\components\libraries\util;..\..\..\..\..\..\components\softdevice\common\softdevice_handler;..\..\..\..\..\..\components\softdevice\s130\headers;..\..\..\..\..\..\components\softdevice\s130\headers\nrf51;..\..\..\..\..\..\components\toolchain;..\..\..\..\..\bsp;..\..\..\..\..\..\external\segger_rtt
+X..\..\..\config\ble_app_uart_s130_pca10028;..\..\..\config;..\..\..\..\..\..\components\ble\ble_advertising;
+X..\..\..\..\..\..\components\ble\ble_services\ble_nus;
+X..\..\..\..\..\..\components\ble\common;
+O..\..\..\..\..\..\components\drivers_nrf\common;..\..\..\..\..\..\components\drivers_nrf\config;..\..\..\..\..\..\components\drivers_nrf\delay;..\..\..\..\..\..\components\drivers_nrf\gpiote;
+O..\..\..\..\..\..\components\drivers_nrf\hal;..\..\..\..\..\..\components\drivers_nrf\pstorage;..\..\..\..\..\..\components\drivers_nrf\uart;..\..\..\..\..\..\components\libraries\button;
+O..\..\..\..\..\..\components\libraries\experimental_section_vars;..\..\..\..\..\..\components\libraries\fifo;..\..\..\..\..\..\components\libraries\fstorage;
+X..\..\..\..\..\..\components\libraries\fstorage\config;
+X..\..\..\..\..\..\components\libraries\timer;
+O..\..\..\..\..\..\components\libraries\uart;..\..\..\..\..\..\components\libraries\util;..\..\..\..\..\..\components\softdevice\common\softdevice_handler;..\..\..\..\..\..\components\softdevice\s130\headers;
+O..\..\..\..\..\..\components\softdevice\s130\headers\nrf51;..\..\..\..\..\..\components\toolchain;..\..\..\..\..\bsp;..\..\..\..\..\..\external\segger_rtt
+
+
+
+[MERGE = HTS + NUS]
+..\..\..\config\ble_app_hts_s130_pca10028;..\..\..\config;..\..\..\..\..\..\components\ble\ble_advertising;..\..\..\..\..\..\components\ble\ble_services\ble_bas;..\..\..\..\..\..\components\ble\ble_services\ble_dis;..\..\..\..\..\..\components\ble\ble_services\ble_hts;..\..\..\..\..\..\components\ble\ble_services\ble_nus;..\..\..\..\..\..\components\ble\common;..\..\..\..\..\..\components\ble\device_manager;..\..\..\..\..\..\components\drivers_nrf\common;..\..\..\..\..\..\components\drivers_nrf\config;..\..\..\..\..\..\components\drivers_nrf\delay;..\..\..\..\..\..\components\drivers_nrf\gpiote;..\..\..\..\..\..\components\drivers_nrf\hal;..\..\..\..\..\..\components\drivers_nrf\pstorage;..\..\..\..\..\..\components\drivers_nrf\uart;..\..\..\..\..\..\components\libraries\button;..\..\..\..\..\..\components\libraries\experimental_section_vars;..\..\..\..\..\..\components\libraries\fifo;..\..\..\..\..\..\components\libraries\fstorage;..\..\..\..\..\..\components\libraries\fstorage\config;..\..\..\..\..\..\components\libraries\sensorsim;..\..\..\..\..\..\components\libraries\timer;..\..\..\..\..\..\components\libraries\trace;..\..\..\..\..\..\components\libraries\uart;..\..\..\..\..\..\components\libraries\util;..\..\..\..\..\..\components\softdevice\common\softdevice_handler;..\..\..\..\..\..\components\softdevice\s130\headers;..\..\..\..\..\..\components\softdevice\s130\headers\nrf51;..\..\..\..\..\..\components\toolchain;..\..\..\..\..\bsp;..\..\..\..\..\..\external\segger_rtt
+
+<for uart merge>
+..\..\..\config\ble_app_uart_s130_pca10028;..\..\..\config;..\..\..\..\..\..\components\ble\ble_advertising;..\..\..\..\..\..\components\ble\ble_services\ble_nus;..\..\..\..\..\..\components\ble\common;..\..\..\..\..\..\components\ble\device_manager;..\..\..\..\..\..\components\drivers_nrf\common;..\..\..\..\..\..\components\drivers_nrf\config;..\..\..\..\..\..\components\drivers_nrf\delay;..\..\..\..\..\..\components\drivers_nrf\gpiote;..\..\..\..\..\..\components\drivers_nrf\hal;..\..\..\..\..\..\components\drivers_nrf\pstorage;..\..\..\..\..\..\components\drivers_nrf\uart;..\..\..\..\..\..\components\libraries\button;..\..\..\..\..\..\components\libraries\experimental_section_vars;..\..\..\..\..\..\components\libraries\fifo;..\..\..\..\..\..\components\libraries\fstorage;..\..\..\..\..\..\components\libraries\fstorage\config;..\..\..\..\..\..\components\libraries\timer;..\..\..\..\..\..\components\libraries\trace;..\..\..\..\..\..\components\libraries\uart;..\..\..\..\..\..\components\libraries\util;..\..\..\..\..\..\components\softdevice\common\softdevice_handler;..\..\..\..\..\..\components\softdevice\s130\headers;..\..\..\..\..\..\components\softdevice\s130\headers\nrf51;..\..\..\..\..\..\components\toolchain;..\..\..\..\..\bsp;..\..\..\..\..\..\external\segger_rtt
+
+
+
+
+

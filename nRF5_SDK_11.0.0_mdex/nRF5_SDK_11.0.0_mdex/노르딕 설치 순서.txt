@@ -1,0 +1,7 @@
+[빌드 에러]
+Cannot install Pack(ARM:CMSIS:4.5.0), Pack not foundCannot install Pack(NordicSemiconductor:nRF_DeviceFamilyPack:8.5.0), Pack not found
+MDK 설치
+https://www.keil.com/dd2/Pack/
+
+
+

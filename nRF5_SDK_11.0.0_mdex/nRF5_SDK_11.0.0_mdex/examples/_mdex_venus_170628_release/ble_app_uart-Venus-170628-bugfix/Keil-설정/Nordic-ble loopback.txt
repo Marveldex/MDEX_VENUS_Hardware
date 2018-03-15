@@ -1,0 +1,60 @@
+[===== PCA10028 보드에서 ble loopback =====]
+프로젝트
+c:\Keil_v5\ARM\nRF5_SDK_11.0.0\examples\ble_peripheral\ble_app_uart\
+s130 스택
+c:\Keil_v5\ARM\nRF5_SDK_11.0.0\components\softdevice\s130\hex\
+
+SDK : 최신으로 다운로드/설치
+nRF5_SDK_11.0.0_89a8197.zip
+KEIL Ver.5
+
+BLE_STACK_SUPPORT_REQD BOARD_CUSTOM S130 NRF_LOG_USES_UART=1 NRF51 SOFTDEVICE_PRESENT SWI_DISABLE0
+
+[===== MERCURY 보드에서 ble loopback =====]
+RAM과 ROM 설정 변경 - Application의 옵션 
+https://devzone.nordicsemi.com/blogs/723/rom-and-ram-management/
+hardware spec
+AC : rom 256KB, ram 32KB
+AA : rom 256KB, ram 16KB
+
+[51422AC - Original] ==> Venus와는 무관함. 노르딕 프로젝트의 기본 세팅.
+IROM1: 0x0 0x40000
+IRAM1: 0x20000000 0x4000
+RAM for Algorithm: 0x20000000 0x4000
+
+
+[ 51422AC - nus loopback (ble_app_uart) 설정 ]
+BLE_STACK_SUPPORT_REQD BOARD_PCA10028 S130 NRF_LOG_USES_UART=1 NRF51 SOFTDEVICE_PRESENT SWI_DISABLE0
+IROM1: 0x1B000 0x25000
+IRAM1: 0x20002080 0x5F80
+RAM for Algorithm: 0x20000000 0x2000
+
+
+[ 51822AA - nus loopback (ble_app_uart) 설정 ] **** 이것이 Venus 기본 세팅.
+BLE_STACK_SUPPORT_REQD BOARD_CUSTOM S130 NRF51 SOFTDEVICE_PRESENT SWI_DISABLE0
+IROM1: 0x1B000, 0x25000
+IRAM1: 0x20002080, 0x1F80
+RAM for Algorithm: 0x20000000 0x2000
+BLE_STACK_SUPPORT_REQD BOARD_CUSTOM S130 NRF_LOG_USES_UART=0 NRF51 SOFTDEVICE_PRESENT SWI_DISABLE0
+
+
+[컴파일 옵션 변경]
+boards.h 헤더 파일에서 custom_board_mercury.h 를 선택하도록 BOARD_CUSTOM 옵션 추가, BOARD_PCA10028 옵션 삭제.
+
+[ 클럭 설정]
+- 외부 클럭이 없다면 내부 클럭 사용하도록 수정해야 함.
+https://devzone.nordicsemi.com/question/72218/s130-200-rom-and-ram-settings/
+.source = NRF_CLOCK_LF_SRC_XTAL 를 ==> NRF_CLOCK_LF_SRC_RC
+NRF_CLOCK_LF_XTAL_ACCURACY_20_PPM 를 ==> NRF_CLOCK_LF_XTAL_ACCURACY_250_PPM
+Ole Bauck 의 글
+- Timer 1 사용하기. Timer0을 어플에서 사용하면 통신이 안 되는 걸로 봐선 0은 스택에서 사용하는 것 같음.
+nrf_drv_config.h 에서 #define TIMER1_ENABLED 를 0에서 1로 설정. TIMER0도 1로 설정.
+ADC도 1로 설정하듯이.
+
+
+[[[  빌드가 제대로 됐음에도, 다운로드가 안 된다면.  ]]]
+보드가 꺼져있거나.
+롬, 램 영역 설정이 안 됐거나. --> RAM은 RW, ZI, ROM은 CODE, RO, RW
+유틸리티 탭에서 사이즈가 안 맞춰져 있거나. 혹은 그 탭에서 reset and run이 체크되어 있지 않거나.
+디버그 탭에서 우상 측에 뭐가 안 잡혀 있을 땐 콤보 박스에서 JTAG을 SW로 바꿔야 함.
+
